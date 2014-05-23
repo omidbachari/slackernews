@@ -1,10 +1,5 @@
 require 'redis'
-
-require 'CSV'
-require 'pry'
-
 require 'sinatra'
-
 require 'json'
 
 
@@ -36,13 +31,13 @@ def get_connection
   end
 end
 
-def news_method
-  news = []
-  CSV.foreach("articles.csv", headers: true, header_converters: :symbol) do |row|
-    news << row.to_hash
-  end
-  news
-end
+# def news_method
+#   news = []
+#   CSV.foreach("articles.csv", headers: true, header_converters: :symbol) do |row|
+#     news << row.to_hash
+#   end
+#   news
+# end
 
 ########## Test Methods ############
 
