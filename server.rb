@@ -62,7 +62,7 @@ end
 ####################################
 
 get '/' do
-  @news_method = news_method
+  @news_method = find_articles
   erb :index
 end
 
