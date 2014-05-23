@@ -96,9 +96,10 @@ post '/comment' do
   if @errors.count >= 1
     erb :comment
   else
-    File.open('articles.csv', 'a') do |file|
-      file.puts ("#{title},#{url},#{description}")
-    end
+    # File.open('articles.csv', 'a') do |file|
+    #   file.puts ("#{title},#{url},#{description}")
+    # end
+    save_article(url, title, description)
     redirect '/'
   end
 end
